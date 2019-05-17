@@ -10,45 +10,45 @@ using namespace Microsoft::WRL::Wrappers;
 
 namespace AdaptiveNamespace
 {
-    HRESULT AdaptiveFontStyleDefinition::RuntimeClassInitialize() noexcept try
+    HRESULT AdaptiveFontTypeDefinition::RuntimeClassInitialize() noexcept try
     {
-        FontStyleDefinition styleDefinition;
-        return RuntimeClassInitialize(styleDefinition);
+        FontTypeDefinition fontTypeDefinition;
+        return RuntimeClassInitialize(fontTypeDefinition);
     }
     CATCH_RETURN;
 
-    HRESULT AdaptiveFontStyleDefinition::RuntimeClassInitialize(FontStyleDefinition styleDefinition) noexcept
+    HRESULT AdaptiveFontTypeDefinition::RuntimeClassInitialize(FontTypeDefinition fontTypeDefinition) noexcept
     {
-        RETURN_IF_FAILED(UTF8ToHString(styleDefinition.fontFamily, m_fontFamily.GetAddressOf()));
-        RETURN_IF_FAILED(MakeAndInitialize<AdaptiveFontWeightsConfig>(m_fontWeights.GetAddressOf(), styleDefinition.fontWeights));
-        RETURN_IF_FAILED(MakeAndInitialize<AdaptiveFontSizesConfig>(m_fontSizes.GetAddressOf(), styleDefinition.fontSizes));
+        RETURN_IF_FAILED(UTF8ToHString(fontTypeDefinition.fontFamily, m_fontFamily.GetAddressOf()));
+        RETURN_IF_FAILED(MakeAndInitialize<AdaptiveFontWeightsConfig>(m_fontWeights.GetAddressOf(), fontTypeDefinition.fontWeights));
+        RETURN_IF_FAILED(MakeAndInitialize<AdaptiveFontSizesConfig>(m_fontSizes.GetAddressOf(), fontTypeDefinition.fontSizes));
         return S_OK;
     }
 
-    HRESULT AdaptiveFontStyleDefinition::get_FontFamily(_Outptr_ HSTRING* value) { return m_fontFamily.CopyTo(value); }
+    HRESULT AdaptiveFontTypeDefinition::get_FontFamily(_Outptr_ HSTRING* value) { return m_fontFamily.CopyTo(value); }
 
-    HRESULT AdaptiveFontStyleDefinition::put_FontFamily(_In_ HSTRING fontFamily)
+    HRESULT AdaptiveFontTypeDefinition::put_FontFamily(_In_ HSTRING fontFamily)
     {
         return m_fontFamily.Set(fontFamily);
     }
 
-    HRESULT AdaptiveFontStyleDefinition::get_FontWeights(_COM_Outptr_ ABI::AdaptiveNamespace::IAdaptiveFontWeightsConfig** weightsConfig)
+    HRESULT AdaptiveFontTypeDefinition::get_FontWeights(_COM_Outptr_ ABI::AdaptiveNamespace::IAdaptiveFontWeightsConfig** weightsConfig)
     {
         return m_fontWeights.CopyTo(weightsConfig);
     }
 
-    HRESULT AdaptiveFontStyleDefinition::put_FontWeights(_In_ ABI::AdaptiveNamespace::IAdaptiveFontWeightsConfig* weightsConfig)
+    HRESULT AdaptiveFontTypeDefinition::put_FontWeights(_In_ ABI::AdaptiveNamespace::IAdaptiveFontWeightsConfig* weightsConfig)
     {
         m_fontWeights = weightsConfig;
         return S_OK;
     }
 
-    HRESULT AdaptiveFontStyleDefinition::get_FontSizes(_COM_Outptr_ ABI::AdaptiveNamespace::IAdaptiveFontSizesConfig** sizesConfig)
+    HRESULT AdaptiveFontTypeDefinition::get_FontSizes(_COM_Outptr_ ABI::AdaptiveNamespace::IAdaptiveFontSizesConfig** sizesConfig)
     {
         return m_fontSizes.CopyTo(sizesConfig);
     }
 
-    HRESULT AdaptiveFontStyleDefinition::put_FontSizes(_In_ ABI::AdaptiveNamespace::IAdaptiveFontSizesConfig* sizesConfig)
+    HRESULT AdaptiveFontTypeDefinition::put_FontSizes(_In_ ABI::AdaptiveNamespace::IAdaptiveFontSizesConfig* sizesConfig)
     {
         m_fontSizes = sizesConfig;
         return S_OK;

@@ -68,7 +68,7 @@ namespace AdaptiveCardsSharedModelUnitTest
             std::shared_ptr<Container> container = std::static_pointer_cast<Container>(elem);
             auto items = container->GetItems();
             std::shared_ptr<Container> container2 = std::static_pointer_cast<Container>(items.back());
-            // When container style is differrent from parent and child, child should get padding
+            // When container fontType is differrent from parent and child, child should get padding
             Assert::IsTrue(container2->GetPadding());
         }
 
