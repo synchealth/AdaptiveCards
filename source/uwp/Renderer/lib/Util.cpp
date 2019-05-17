@@ -999,7 +999,7 @@ HRESULT GetFontFamilyFromFontType(_In_ ABI::AdaptiveNamespace::IAdaptiveHostConf
     RETURN_IF_FAILED(styleDefinition->get_FontFamily(result.GetAddressOf()));
     if (result == NULL)
     {
-        if (style == ABI::AdaptiveNamespace::FontType::Monospace)
+        if (fontType == ABI::AdaptiveNamespace::FontType::Monospace)
         {
             // fallback to system default monospace FontFamily
             RETURN_IF_FAILED(UTF8ToHString("Courier New", result.GetAddressOf()));
@@ -1086,15 +1086,15 @@ HRESULT GetFontWeightFromStyle(_In_ ABI::AdaptiveNamespace::IAdaptiveHostConfig*
     ABI::AdaptiveNamespace::IAdaptiveFontWeightsConfig* weightConfig;
 
     // get FontWeight from desired fontType
-    RETURN_IF_FAILED(GetFontType(hostConfig, fontType, &styleDefinition));
+    RETURN_IF_FAILED(GetFontType(hostConfig, fontType, &fontTypeDefinition));
     RETURN_IF_FAILED(fontTypeDefinition->get_FontWeights(&weightConfig));
     RETURN_IF_FAILED(GetFontWeight(weightConfig, desiredWeight, &result));
 
     if (result == MAXUINT16)
     {
         // get FontWeight from Default style
-        RETURN_IF_FAILED(GetFontType(hostConfig, ABI::AdaptiveNamespace::FontType::Default, &styleDefinition));
-        RETURN_IF_FAILED(styleDefinition->get_FontWeights(&weightConfig));
+        RETURN_IF_FAILED(GetFontType(hostConfig, ABI::AdaptiveNamespace::FontType::Default, &fontTypeDefinition));
+        RETURN_IF_FAILED(fontTypeDefinition->get_FontWeights(&weightConfig));
         RETURN_IF_FAILED(GetFontWeight(weightConfig, desiredWeight, &result));
 
         if (result == MAXUINT16)
