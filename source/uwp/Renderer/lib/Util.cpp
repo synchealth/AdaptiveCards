@@ -1129,7 +1129,7 @@ CATCH_RETURN;
 
 HRESULT GetFontType(_In_ ABI::AdaptiveNamespace::IAdaptiveHostConfig* hostConfig,
                      ABI::AdaptiveNamespace::FontType fontType,
-                     _COM_Outptr_ ABI::AdaptiveNamespace::IAdaptiveFontTypeDefinition** styleDefinition) noexcept try
+                     _COM_Outptr_ ABI::AdaptiveNamespace::IAdaptiveFontTypeDefinition** fontTypeDefinition) noexcept try
 {
     ABI::AdaptiveNamespace::IAdaptiveFontTypesDefinition* fontTypes;
     RETURN_IF_FAILED(hostConfig->get_FontTypes(&fontTypes));
@@ -1137,11 +1137,11 @@ HRESULT GetFontType(_In_ ABI::AdaptiveNamespace::IAdaptiveHostConfig* hostConfig
     switch (fontType)
     {
     case ABI::AdaptiveNamespace::FontType::Monospace:
-        RETURN_IF_FAILED(fontTypes->get_Monospace(styleDefinition));
+        RETURN_IF_FAILED(fontTypes->get_Monospace(fontTypeDefinition));
         break;
     case ABI::AdaptiveNamespace::FontType::Default:
     default:
-        RETURN_IF_FAILED(fontTypes->get_Default(styleDefinition));
+        RETURN_IF_FAILED(fontTypes->get_Default(fontTypeDefinition));
         break;
     }
     return S_OK;
