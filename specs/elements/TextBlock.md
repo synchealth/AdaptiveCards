@@ -4,19 +4,19 @@
 
 | Property | Type | Required | Description | Version |
 | -------- | ---- | -------- | ----------- | ------- |
-| **color** | `string` |  No | Controls the color of `TextBlock` elements. | 1.0 |
-| **fontType** | `string` |  No | Type of font to use for rendering | 1.0 |
-| **horizontalAlignment** | `string` |  No, default: `"left"` | Controls how elements are horizontally positioned within their container. | 1.0 |
+| **type** | `"TextBlock"` |  No | Must be `TextBlock` | 1.0 |
+| **text** | `string` | Yes | Text to display | 1.0 |
+| **color** | `any` |  No | Controls the color of `TextBlock` elements. | 1.0 |
+| **fontType** | `any` |  No | Type of font to use for rendering | 1.0 |
+| **horizontalAlignment** | `any` |  No | Controls how this element is horizontally positioned within its parent. | 1.0 |
 | **isSubtle** | `boolean` |  No, default: `false` | If `true`, displays text slightly toned down to appear less prominent. | 1.0 |
 | **maxLines** | `number` |  No | Specifies the maximum number of lines to display. | 1.0 |
-| **size** | `string` |  No | Controls size of text. | 1.0 |
-| **text** | `string` | Yes | Text to display. | 1.0 |
-| **type** | `"TextBlock"` | Yes | Must be `"TextBlock"`. | 1.0 |
-| **weight** | `string` |  No | Controls the weight of `TextBlock` elements. | 1.0 |
+| **size** | `any` |  No | Controls size of text. | 1.0 |
+| **weight** | `any` |  No | Controls the weight of `TextBlock` elements. | 1.0 |
 | **wrap** | `boolean` |  No, default: `false` | If `true`, allow text to wrap. Otherwise, text is clipped. | 1.0 |
-| **id** | `string` |  No | A unique identifier associated with the element. | 1.0 |
-| **spacing** | `string` |  No | Controls the amount of spacing between this element and the preceding element. | 1.0 |
-| **separator** | `boolean` |  No, default: `false` | When `true`, draw a separating line at the top of the element. | 1.0 |
+| **id** | `any` |  No | &nbsp; | 1.0 |
+| **spacing** | `any` |  No | &nbsp; | 1.0 |
+| **separator** | `any` |  No | &nbsp; | 1.0 |
 <!-- END AUTO-GENERATED -->
 
 ## Rendering

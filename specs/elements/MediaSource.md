@@ -6,6 +6,7 @@
 
 | Property | Type | Required | Description | Version |
 | -------- | ---- | -------- | ----------- | ------- |
+| **type** | `"MediaSource"` |  No | Must be `MediaSource` | 1.1 |
 | **mimeType** | `string` | Yes | Mime type of associated media (e.g. `"video/mp4"`). | 1.1 |
 | **url** | `string` | Yes | URL to media. | 1.1 |
 <!-- END AUTO-GENERATED -->

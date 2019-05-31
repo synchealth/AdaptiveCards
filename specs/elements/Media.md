@@ -6,13 +6,13 @@
 
 | Property | Type | Required | Description | Version |
 | -------- | ---- | -------- | ----------- | ------- |
-| **type** | `"Media"` | Yes | Must be `"Media"`. | 1.1 |
-| **sources** | `object` `[]` | Yes | Array of media sources to attempt to play. | 1.1 |
+| **type** | `"Media"` |  No | Must be `Media` | 1.1 |
+| **sources** | `MediaSource[]` | Yes | Array of media sources to attempt to play. | 1.1 |
 | **poster** | `string` |  No | URL of an image to display before playing. Supports data URI in version 1.2+ | 1.1 |
 | **altText** | `string` |  No | Alternate text describing the audio or video. | 1.1 |
-| **id** | `string` |  No | A unique identifier associated with the element. | 1.1 |
-| **spacing** | `string` |  No | Controls the amount of spacing between this element and the preceding element. | 1.1 |
-| **separator** | `boolean` |  No, default: `false` | When `true`, draw a separating line at the top of the element. | 1.1 |
+| **id** | `any` |  No | &nbsp; | 1.1 |
+| **spacing** | `any` |  No | &nbsp; | 1.1 |
+| **separator** | `any` |  No | &nbsp; | 1.1 |
 <!-- END AUTO-GENERATED -->
 
 ## Rendering
