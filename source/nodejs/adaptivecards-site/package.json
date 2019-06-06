@@ -1,6 +1,6 @@
 {
 	"name": "adaptivecards-site",
-	"version": "0.3.4",
+	"version": "0.4.0",
 	"private": true,
 	"scripts": {
 		"build": "hexo generate",
@@ -27,19 +27,20 @@
 		"hexo-renderer-marked": "^0.3.2",
 		"hexo-renderer-stylus": "^0.3.1",
 		"hexo-server": "^0.3.3",
-    "marked-schema": "0.1.5",
+    "marked-schema": "^0.1.4",
 		"minimist": "^1.2.0",
     "rimraf": "^2.6.2",
-    "spec-generator": "0.5.0",
+    "typed-schema": "0.5.0",
+    "typed-schema-markdown": "0.5.0",
 		"typescript": "^3.2.2",
 		"webpack": "^4.27.1",
 		"webpack-cli": "^3.1.2",
 		"webpack-dev-server": "^3.1.14"
 	},
 	"dependencies": {
-		"adaptivecards": "^1.2.0-beta1",
-		"adaptivecards-designer": "^0.5.0",
-		"adaptivecards-visualizer": "^1.1.6",
+		"adaptivecards": "^1.2.0",
+		"adaptivecards-designer": "^0.6.0",
+		"adaptivecards-visualizer": "^1.2.0",
 		"markdown-it": "^8.4.0",
 		"monaco-editor": "^0.15.6"
 	}

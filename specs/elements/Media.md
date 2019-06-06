@@ -7,12 +7,16 @@
 | Property | Type | Required | Description | Version |
 | -------- | ---- | -------- | ----------- | ------- |
 | **type** | `"Media"` | Yes | Must be `"Media"`. | 1.1 |
-| **sources** | `object` `[]` | Yes | Array of media sources to attempt to play. | 1.1 |
-| **poster** | `string` |  No | URL of an image to display before playing. Supports data URI in version 1.2+ | 1.1 |
-| **altText** | `string` |  No | Alternate text describing the audio or video. | 1.1 |
-| **id** | `string` |  No | A unique identifier associated with the element. | 1.1 |
-| **spacing** | `string` |  No | Controls the amount of spacing between this element and the preceding element. | 1.1 |
-| **separator** | `boolean` |  No, default: `false` | When `true`, draw a separating line at the top of the element. | 1.1 |
+| **sources** | `MediaSource[]` | Yes | Array of media sources to attempt to play. | 1.1 |
+| **poster** | `uri` | No | URL of an image to display before playing. Supports data URI in version 1.2+ | 1.1 |
+| **altText** | `string` | No | Alternate text describing the audio or video. | 1.1 |
+| **fallback** | `Element`, `FallbackOption` | No | Describes what to do when an unknown element is encountered or the requires of this or any children can't be met. | 1.2 |
+| **height** | `BlockElementHeight` | No | Specifies the height of the element. | 1.1 |
+| **separator** | `boolean` | No | When `true`, draw a separating line at the top of the element. | 1.1 |
+| **spacing** | `Spacing` | No | Controls the amount of spacing between this element and the preceding element. | 1.1 |
+| **id** | `string` | No | A unique identifier associated with the item. | 1.1 |
+| **isVisible** | `boolean` | No, default: `true` | If `false`, this item will be removed from the visual tree. | 1.2 |
+| **requires** | `Dictionary<string>` | No | A series of key/value pairs indicating features that the item requires with corresponding minimum version. When a feature is missing or of insufficient version, fallback is triggered. | 1.2 |
 <!-- END AUTO-GENERATED -->
 
 ## Rendering
