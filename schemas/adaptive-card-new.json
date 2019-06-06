@@ -1404,6 +1404,12 @@
     "FontSize": {
 			"anyOf": [
 				{
+					"enum": [
+						"default",
+						"small"
+						]
+				},
+				{
 					"pattern": "^[d|D][e|E][f|F][a|A][u|U][l|L][t|T]$"
 				},
 				{
