@@ -1402,13 +1402,14 @@
       ]
     },
     "FontSize": {
-      "enum": [
-        "default",
-        "small",
-        "medium",
-        "large",
-        "extraLarge"
-      ]
+			"anyOf": [
+				{
+					"pattern": "^[d|D][e|E][f|F][a|A][u|U][l|L][t|T]$"
+				},
+				{
+					"pattern": "^[s|S]mall$"
+				}
+				]
     },
     "FontType": {
       "enum": [
