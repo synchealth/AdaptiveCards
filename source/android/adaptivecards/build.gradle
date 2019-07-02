@@ -46,7 +46,7 @@ task createPom {
     doLast {
         pom {
             project {
-                groupId 'io.adaptivecards'
+                groupId 'com.github.synchealth'
                 artifactId 'adaptivecards-android'
                 version System.getenv('XES_PACKAGEVERSIONNUMBER') ?: '0.0.0'
                 name 'Android Adaptive Cards Library'
@@ -79,7 +79,7 @@ task createPom {
 publishing {
     publications {
         adaptivecards(MavenPublication) {
-            groupId 'io.adaptivecards'
+            groupId 'com.github.synchealth'
             version System.getenv('XES_SEMANTICVERSION') + '-20' + System.getenv('TFS_VersionNumber')
             artifact(sourceJar)
             artifact("$buildDir/outputs/aar/adaptivecards-release.aar")
@@ -106,7 +106,7 @@ uploadArchives {
                     authentication(userName: NexusUserName, password: NexusPassword)
                 }
                 pom {
-                    setGroupId "io.adaptivecards"
+                    setGroupId "com.github.synchealth"
                     setVersion System.getenv("XES_PACKAGEVERSIONNUMBER") ?:"0.0.0"
                 }
 
